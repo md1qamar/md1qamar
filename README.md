@@ -2,7 +2,7 @@
 <h3 align="center">Custom Software Developer & Solutions Architect</h3>
 
 <p align="center">
-  Designing and building 100% tailor-made software solutions that automate workflows and scale businesses. 🌍 Based in Burhanpur, India.
+  Designing and building 100% tailor-made software solutions that automate workflows and scale businesses. 🌍 Based in  Madhya Pradesh, India.
 </p>
 
 ---
