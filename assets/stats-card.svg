@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Live GitHub Open-Source Snapshot">
+  <defs>
+    <linearGradient id="sbg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B1120" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="180" rx="14" fill="url(#sbg)" stroke="#1E293B" stroke-width="1.5" />
+
+  <text x="36" y="34" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.2">LIVE GITHUB TELEMETRY · SYNCED 2026-11-25 UTC</text>
+
+  <!-- Card 1: Public Tools -->
+  <rect x="36" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
+  <text x="56" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Public Tool Repos</text>
+  <text x="56" y="124" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">3</text>
+
+  <!-- Card 2: Stars -->
+  <rect x="318" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
+  <text x="338" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Total Repo Stars</text>
+  <text x="338" y="124" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">2</text>
+
+  <!-- Card 3: Primary Language -->
+  <rect x="600" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
+  <text x="620" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Primary Language</text>
+  <text x="620" y="122" fill="#818CF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700">TypeScript</text>
+
+  <!-- Card 4: Latest Shipped -->
+  <rect x="882" y="52" width="282" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
+  <text x="902" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Latest Shipped Repo</text>
+  <text x="902" y="120" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700">skillvet (2026-11-25)</text>
+
+  <text x="36" y="168" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">Stack mix: TypeScript: 3 · Auto-refreshed via GitHub Actions</text>
+</svg>
