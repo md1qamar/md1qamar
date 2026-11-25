@@ -42,7 +42,7 @@
 | --- | --- | --- | --- | ---: | --- |
 | [**skillvet**](https://github.com/md1qamar/skillvet) | Pre-install security scanner, broken-reference auditor, and spec linter for SKILL.md agent skills. | TypeScript | MIT | 0 | 2026-11-25 |
 | [**smokeproof**](https://github.com/md1qamar/smokeproof) | Real-browser pre-ship verification CLI, MCP server & Agent Skill for AI coding agents. Catch console/5xx errors, mobile overflow, de... | TypeScript | MIT | 1 | 2026-11-25 |
-| [**bugcast**](https://github.com/md1qamar/bugcast) | 🎬 Privacy-first, local-first screen & session recorder for developers. Capture screen, audio & live system diagnostics (OS, browser... | TypeScript | — | 1 | 2026-11-25 |
+| [**bugcast**](https://github.com/md1qamar/bugcast) | 🎬 Privacy-first, local-first screen & session recorder for developers. Capture screen, audio & live system diagnostics (OS, browser... | TypeScript | MIT | 1 | 2026-11-25 |
 <!-- daily-repos:end -->
 
 ---
