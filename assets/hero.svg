@@ -1,45 +1,104 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Mohammed Qamar — DevTools Builder and Custom Software Architect">
   <defs>
+    <style>
+      .cursor-blink { animation: blink 1.05s steps(2, start) infinite; }
+      .pulse-ring { transform-box: fill-box; transform-origin: center; }
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor-blink { animation: none; }
+      }
+    </style>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#090D16" />
       <stop offset="55%" stop-color="#0F172A" />
       <stop offset="100%" stop-color="#0B1324" />
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="accent" x1="0%" y1="0%" x2="200%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="50%" stop-color="#818CF8" />
-      <stop offset="100%" stop-color="#34D399" />
+      <stop offset="25%" stop-color="#818CF8" />
+      <stop offset="50%" stop-color="#34D399" />
+      <stop offset="75%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#38BDF8" />
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="0 0" dur="5s" repeatCount="indefinite" />
     </linearGradient>
-    <radialGradient id="glow1" cx="82%" cy="22%" r="45%">
-      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22" />
+    <linearGradient id="sweep" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="82%" cy="22%" r="48%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.24">
+        <animate attributeName="stop-opacity" values="0.16;0.28;0.16" dur="6s" repeatCount="indefinite" />
+      </stop>
       <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="glow2" cx="18%" cy="82%" r="45%">
-      <stop offset="0%" stop-color="#34D399" stop-opacity="0.16" />
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.18">
+        <animate attributeName="stop-opacity" values="0.12;0.24;0.12" dur="7s" repeatCount="indefinite" />
+      </stop>
       <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="1" opacity="0.45" />
     </pattern>
+    <clipPath id="hero-clip">
+      <rect width="1200" height="320" rx="18" />
+    </clipPath>
+    <clipPath id="term-line-1">
+      <rect x="14" y="56" width="0" height="24">
+        <animate attributeName="width" from="0" to="300" dur="0.7s" begin="0.1s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="term-line-2">
+      <rect x="14" y="88" width="0" height="24">
+        <animate attributeName="width" from="0" to="300" dur="0.7s" begin="0.65s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="term-line-3">
+      <rect x="14" y="120" width="0" height="24">
+        <animate attributeName="width" from="0" to="300" dur="0.7s" begin="1.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="term-line-4">
+      <rect x="14" y="152" width="0" height="24">
+        <animate attributeName="width" from="0" to="300" dur="0.7s" begin="1.75s" fill="freeze" />
+      </rect>
+    </clipPath>
   </defs>
 
-  <rect width="1200" height="320" rx="18" fill="url(#bg)" />
-  <rect width="1200" height="320" rx="18" fill="url(#grid)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glow1)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glow2)" />
+  <g clip-path="url(#hero-clip)">
+    <rect width="1200" height="320" rx="18" fill="url(#bg)" />
+    <rect width="1200" height="320" rx="18" fill="url(#grid)" />
+    <rect width="1200" height="320" rx="18" fill="url(#glow1)" />
+    <rect width="1200" height="320" rx="18" fill="url(#glow2)" />
+
+    <!-- Animated subtle energy pulse along top border -->
+    <rect x="-260" y="0" width="260" height="2.5" fill="url(#sweep)">
+      <animate attributeName="x" from="-260" to="1200" dur="4.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
   <rect x="1" y="1" width="1198" height="318" rx="17" fill="none" stroke="#1E293B" stroke-width="2" />
 
-  <!-- Top left category badge -->
+  <!-- Top left category badge with pulsing radar indicator -->
   <rect x="64" y="48" width="388" height="30" rx="15" fill="#111C33" stroke="#334155" stroke-width="1" />
-  <circle cx="84" cy="63" r="4.5" fill="#34D399" />
+  <circle cx="84" cy="63" r="4.5" fill="none" stroke="#34D399" stroke-width="1.5" class="pulse-ring">
+    <animate attributeName="r" values="4.5;11" dur="2.2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.85;0" dur="2.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="84" cy="63" r="4.5" fill="#34D399">
+    <animate attributeName="opacity" values="1;0.65;1" dur="2.2s" repeatCount="indefinite" />
+  </circle>
   <text x="100" y="68" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="600" letter-spacing="1.4">OPEN SOURCE · DEVTOOLS · AI CODING AGENTS</text>
 
   <!-- Name and subtitle -->
   <text x="64" y="142" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="-0.8">Mohammed Qamar</text>
   <text x="64" y="186" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="500">DevTools Builder &amp; Custom Software Architect</text>
 
-  <!-- Accent divider -->
-  <rect x="64" y="212" width="160" height="4" rx="2" fill="url(#accent)" />
+  <!-- Animated gradient accent bar -->
+  <rect x="64" y="212" width="180" height="4" rx="2" fill="url(#accent)" />
 
   <!-- Footer chips -->
   <text x="64" y="256" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
@@ -49,25 +108,48 @@
     github.com/md1qamar  ·  Madhya Pradesh, India
   </text>
 
-  <!-- Right-side terminal status card -->
-  <g transform="translate(808, 56)">
-    <rect width="328" height="208" rx="14" fill="#0B1120" fill-opacity="0.92" stroke="#1E293B" stroke-width="1.5" />
+  <!-- Right-side animated terminal status card -->
+  <g transform="translate(808, 52)">
+    <rect width="328" height="216" rx="14" fill="#0B1120" fill-opacity="0.94" stroke="#1E293B" stroke-width="1.5" />
     <circle cx="24" cy="24" r="5" fill="#EF4444" opacity="0.85" />
     <circle cx="42" cy="24" r="5" fill="#F59E0B" opacity="0.85" />
     <circle cx="60" cy="24" r="5" fill="#10B981" opacity="0.85" />
     <text x="82" y="28" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12">ship-loop.ts</text>
+    <circle cx="304" cy="24" r="3.5" fill="#34D399">
+      <animate attributeName="opacity" values="0.35;1;0.35" dur="1.8s" repeatCount="indefinite" />
+    </circle>
     <line x1="0" y1="44" x2="328" y2="44" stroke="#1E293B" stroke-width="1" />
 
-    <text x="22" y="74" fill="#38BDF8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ discover</text>
-    <text x="118" y="74" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">trending dev problems</text>
+    <!-- Moving active row highlight -->
+    <rect x="12" y="55" width="304" height="26" rx="6" fill="#38BDF8" fill-opacity="0.09" stroke="#38BDF8" stroke-opacity="0.22" stroke-width="1">
+      <animate attributeName="y" values="55;87;119;151;55" keyTimes="0;0.25;0.5;0.75;1" dur="6.4s" calcMode="discrete" repeatCount="indefinite" />
+    </rect>
 
-    <text x="22" y="106" fill="#818CF8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ build</text>
-    <text x="118" y="106" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">local-first TS + tests</text>
+    <g clip-path="url(#term-line-1)">
+      <text x="22" y="73" fill="#38BDF8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ discover</text>
+      <text x="118" y="73" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">trending dev problems</text>
+    </g>
 
-    <text x="22" y="138" fill="#FBBF24" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ gate</text>
-    <text x="118" y="138" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">secret-scan &amp; CI green</text>
+    <g clip-path="url(#term-line-2)">
+      <text x="22" y="105" fill="#818CF8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ build</text>
+      <text x="118" y="105" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">local-first TS + tests</text>
+    </g>
 
-    <text x="22" y="170" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ ship</text>
-    <text x="118" y="170" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">open-source to GitHub</text>
+    <g clip-path="url(#term-line-3)">
+      <text x="22" y="137" fill="#FBBF24" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ gate</text>
+      <text x="118" y="137" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">secret-scan &amp; CI green</text>
+    </g>
+
+    <g clip-path="url(#term-line-4)">
+      <text x="22" y="169" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5">$ ship</text>
+      <text x="118" y="169" fill="#F8FAFC" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">open-source to GitHub</text>
+    </g>
+
+    <!-- Terminal status progress & blinking cursor -->
+    <rect x="22" y="191" width="268" height="4" rx="2" fill="#1E293B" />
+    <rect x="22" y="191" width="60" height="4" rx="2" fill="url(#accent)">
+      <animate attributeName="width" values="40;140;220;268;40" dur="6.4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="298" y="186" width="8" height="14" rx="1.5" fill="#34D399" class="cursor-blink" />
   </g>
 </svg>

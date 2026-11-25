@@ -65,6 +65,9 @@ test('buildReposTable and buildStatsSvg escape markdown pipes and XML characters
 
   const svg = buildStatsSvg(computeProfileStats(owned), '2026-11-25');
   assert.ok(svg.includes('<svg'));
+  assert.ok(svg.includes('<animate'));
+  assert.ok(svg.includes('prefers-reduced-motion'));
+  assert.equal(svg.includes('<script'), false);
   assert.ok(svg.includes('tool-x (2026-11-25)'));
   assert.equal(escapeXml('a & "b" <c>'), 'a &amp; &quot;b&quot; &lt;c&gt;');
 });

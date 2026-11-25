@@ -124,38 +124,95 @@ export function buildStatsSvg(stats, dateStr) {
     .map((l) => `${l.name}: ${l.count}`)
     .join(' · ') || 'No repositories yet';
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Live GitHub Open-Source Snapshot">
+  const repoBarW = Math.min(222, Math.max(44, stats.repoCount * 28));
+  const starBarW = Math.min(222, Math.max(36, stats.totalStars * 24));
+  const langBarW = 196;
+  const shipBarW = stats.latestRepo ? 226 : 36;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 186" width="1200" height="186" role="img" aria-label="Live GitHub Open-Source Snapshot">
   <defs>
+    <style>
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+      }
+    </style>
     <linearGradient id="sbg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0B1120" />
       <stop offset="100%" stop-color="#111827" />
     </linearGradient>
+    <linearGradient id="scan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="stats-clip">
+      <rect width="1200" height="186" rx="14" />
+    </clipPath>
   </defs>
-  <rect width="1200" height="180" rx="14" fill="url(#sbg)" stroke="#1E293B" stroke-width="1.5" />
 
-  <text x="36" y="34" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.2">LIVE GITHUB TELEMETRY · SYNCED ${escapeXml(dateStr)} UTC</text>
+  <g clip-path="url(#stats-clip)">
+    <rect width="1200" height="186" rx="14" fill="url(#sbg)" />
+    <rect x="-240" y="0" width="240" height="2.5" fill="url(#scan)">
+      <animate attributeName="x" from="-240" to="1200" dur="5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  <rect x="0.75" y="0.75" width="1198.5" height="184.5" rx="13.5" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Live pulsing radar indicator -->
+  <circle cx="42" cy="29" r="4" fill="none" stroke="#34D399" stroke-width="1.4">
+    <animate attributeName="r" values="4;10" dur="2.2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.85;0" dur="2.2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="42" cy="29" r="4" fill="#34D399">
+    <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" repeatCount="indefinite" />
+  </circle>
+  <text x="58" y="33" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.2">LIVE GITHUB TELEMETRY · SYNCED ${escapeXml(dateStr)} UTC</text>
 
   <!-- Card 1: Public Tools -->
-  <rect x="36" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
-  <text x="56" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Public Tool Repos</text>
-  <text x="56" y="124" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">${stats.repoCount}</text>
+  <rect x="36" y="50" width="262" height="102" rx="10" fill="#0F172A" stroke="#1E293B">
+    <animate attributeName="stroke" values="#1E293B;#38BDF8;#1E293B" dur="6s" begin="0s" repeatCount="indefinite" />
+  </rect>
+  <text x="56" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Public Tool Repos</text>
+  <text x="56" y="118" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">${stats.repoCount}</text>
+  <rect x="56" y="134" width="222" height="4" rx="2" fill="#1E293B" />
+  <rect x="56" y="134" width="0" height="4" rx="2" fill="#38BDF8">
+    <animate attributeName="width" from="0" to="${repoBarW}" dur="1.1s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+  </rect>
 
   <!-- Card 2: Stars -->
-  <rect x="318" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
-  <text x="338" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Total Repo Stars</text>
-  <text x="338" y="124" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">${stats.totalStars}</text>
+  <rect x="318" y="50" width="262" height="102" rx="10" fill="#0F172A" stroke="#1E293B">
+    <animate attributeName="stroke" values="#1E293B;#FBBF24;#1E293B" dur="6s" begin="1.5s" repeatCount="indefinite" />
+  </rect>
+  <text x="338" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Total Repo Stars</text>
+  <text x="338" y="118" fill="#FBBF24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">${stats.totalStars}</text>
+  <rect x="338" y="134" width="222" height="4" rx="2" fill="#1E293B" />
+  <rect x="338" y="134" width="0" height="4" rx="2" fill="#FBBF24">
+    <animate attributeName="width" from="0" to="${starBarW}" dur="1.1s" begin="0.25s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+  </rect>
 
   <!-- Card 3: Primary Language -->
-  <rect x="600" y="52" width="262" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
-  <text x="620" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Primary Language</text>
-  <text x="620" y="122" fill="#818CF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700">${escapeXml(primaryLang)}</text>
+  <rect x="600" y="50" width="262" height="102" rx="10" fill="#0F172A" stroke="#1E293B">
+    <animate attributeName="stroke" values="#1E293B;#818CF8;#1E293B" dur="6s" begin="3s" repeatCount="indefinite" />
+  </rect>
+  <text x="620" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Primary Language</text>
+  <text x="620" y="116" fill="#818CF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700">${escapeXml(primaryLang)}</text>
+  <rect x="620" y="134" width="222" height="4" rx="2" fill="#1E293B" />
+  <rect x="620" y="134" width="0" height="4" rx="2" fill="#818CF8">
+    <animate attributeName="width" from="0" to="${langBarW}" dur="1.1s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+  </rect>
 
   <!-- Card 4: Latest Shipped -->
-  <rect x="882" y="52" width="282" height="96" rx="10" fill="#0F172A" stroke="#1E293B" />
-  <text x="902" y="82" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Latest Shipped Repo</text>
-  <text x="902" y="120" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700">${escapeXml(latestText)}</text>
+  <rect x="882" y="50" width="282" height="102" rx="10" fill="#0F172A" stroke="#1E293B">
+    <animate attributeName="stroke" values="#1E293B;#34D399;#1E293B" dur="6s" begin="4.5s" repeatCount="indefinite" />
+  </rect>
+  <text x="902" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Latest Shipped Repo</text>
+  <text x="902" y="114" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700">${escapeXml(latestText)}</text>
+  <rect x="902" y="134" width="242" height="4" rx="2" fill="#1E293B" />
+  <rect x="902" y="134" width="0" height="4" rx="2" fill="#34D399">
+    <animate attributeName="width" from="0" to="${shipBarW}" dur="1.1s" begin="0.55s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+  </rect>
 
-  <text x="36" y="168" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">Stack mix: ${escapeXml(langBreakdown)} · Auto-refreshed via GitHub Actions</text>
+  <text x="36" y="172" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">Stack mix: ${escapeXml(langBreakdown)} · Auto-refreshed via GitHub Actions</text>
 </svg>
 `;
 }
