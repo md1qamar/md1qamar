@@ -34,12 +34,16 @@
 <img src="./assets/stats-card.svg" width="100%" alt="Live GitHub Open-Source Snapshot" />
 
 <!-- shipped-stats:start -->
-<sub>Showing **3** public repositories (**2** stars total) · Auto-synced via GitHub Actions on **2026-11-25 UTC**</sub>
+<sub>Showing **7** public repositories (**2** stars total) · Auto-synced via GitHub Actions on **2026-11-26 UTC**</sub>
 <!-- shipped-stats:end -->
 
 <!-- daily-repos:start -->
 | Repository | What It Does | Stack | License | Stars | Shipped |
 | --- | --- | --- | --- | ---: | --- |
+| [**feelcraft**](https://github.com/md1qamar/feelcraft) | Anti-AI-slop motion physics and micro-interaction craft skill for Antigravity, Cursor, Codex, and Claude Code — with a zero-dependen... | JavaScript | MIT | 0 | 2026-11-26 |
+| [**tokenslice**](https://github.com/md1qamar/tokenslice) | Surgical AST context slicer, terminal log compressor, and token-efficiency benchmark for AI coding agents. | TypeScript | MIT | 0 | 2026-11-26 |
+| [**diffbench**](https://github.com/md1qamar/diffbench) | Falsifiable optimization gate for coding agents: hotspot profiling, differential equivalence fuzzing with counterexample shrinking, ... | TypeScript | MIT | 0 | 2026-11-26 |
+| [**ironvault**](https://github.com/md1qamar/ironvault) | High-security zero-knowledge offline desktop password manager built with Python, CustomTkinter, Argon2id and AES-256-GCM. | Python | — | 0 | 2026-11-26 |
 | [**skillvet**](https://github.com/md1qamar/skillvet) | Pre-install security scanner, broken-reference auditor, and spec linter for SKILL.md agent skills. | TypeScript | MIT | 0 | 2026-11-25 |
 | [**smokeproof**](https://github.com/md1qamar/smokeproof) | Real-browser pre-ship verification CLI, MCP server & Agent Skill for AI coding agents. Catch console/5xx errors, mobile overflow, de... | TypeScript | MIT | 1 | 2026-11-25 |
 | [**bugcast**](https://github.com/md1qamar/bugcast) | 🎬 Privacy-first, local-first screen & session recorder for developers. Capture screen, audio & live system diagnostics (OS, browser... | TypeScript | MIT | 1 | 2026-11-25 |
