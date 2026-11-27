@@ -34,12 +34,13 @@
 <img src="./assets/stats-card.svg" width="100%" alt="Live GitHub Open-Source Snapshot" />
 
 <!-- shipped-stats:start -->
-<sub>Showing **7** public repositories (**2** stars total) · Auto-synced via GitHub Actions on **2026-11-26 UTC**</sub>
+<sub>Showing **8** public repositories (**2** stars total) · Auto-synced via GitHub Actions on **2026-11-27 UTC**</sub>
 <!-- shipped-stats:end -->
 
 <!-- daily-repos:start -->
 | Repository | What It Does | Stack | License | Stars | Shipped |
 | --- | --- | --- | --- | ---: | --- |
+| [**mcpprobe**](https://github.com/md1qamar/mcpprobe) | Zero-LLM protocol fuzzer, capability-matrix verifier, schema auditor, and breaking-change differ for local MCP servers. | TypeScript | MIT | 0 | 2026-11-27 |
 | [**feelcraft**](https://github.com/md1qamar/feelcraft) | Anti-AI-slop motion physics and micro-interaction craft skill for Antigravity, Cursor, Codex, and Claude Code — with a zero-dependen... | JavaScript | MIT | 0 | 2026-11-26 |
 | [**tokenslice**](https://github.com/md1qamar/tokenslice) | Surgical AST context slicer, terminal log compressor, and token-efficiency benchmark for AI coding agents. | TypeScript | MIT | 0 | 2026-11-26 |
 | [**diffbench**](https://github.com/md1qamar/diffbench) | Falsifiable optimization gate for coding agents: hotspot profiling, differential equivalence fuzzing with counterexample shrinking, ... | TypeScript | MIT | 0 | 2026-11-26 |

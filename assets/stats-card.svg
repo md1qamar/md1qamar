@@ -35,17 +35,17 @@
   <circle cx="42" cy="29" r="4" fill="#34D399">
     <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" repeatCount="indefinite" />
   </circle>
-  <text x="58" y="33" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.2">LIVE GITHUB TELEMETRY · SYNCED 2026-11-26 UTC</text>
+  <text x="58" y="33" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.2">LIVE GITHUB TELEMETRY · SYNCED 2026-11-27 UTC</text>
 
   <!-- Card 1: Public Tools -->
   <rect x="36" y="50" width="262" height="102" rx="10" fill="#0F172A" stroke="#1E293B">
     <animate attributeName="stroke" values="#1E293B;#38BDF8;#1E293B" dur="6s" begin="0s" repeatCount="indefinite" />
   </rect>
   <text x="56" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Public Tool Repos</text>
-  <text x="56" y="118" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">7</text>
+  <text x="56" y="118" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800">8</text>
   <rect x="56" y="134" width="222" height="4" rx="2" fill="#1E293B" />
   <rect x="56" y="134" width="0" height="4" rx="2" fill="#38BDF8">
-    <animate attributeName="width" from="0" to="196" dur="1.1s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
+    <animate attributeName="width" from="0" to="222" dur="1.1s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
   </rect>
 
   <!-- Card 2: Stars -->
@@ -75,11 +75,11 @@
     <animate attributeName="stroke" values="#1E293B;#34D399;#1E293B" dur="6s" begin="4.5s" repeatCount="indefinite" />
   </rect>
   <text x="902" y="78" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Latest Shipped Repo</text>
-  <text x="902" y="114" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700">feelcraft (2026-11-26)</text>
+  <text x="902" y="114" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="700">mcpprobe (2026-11-27)</text>
   <rect x="902" y="134" width="242" height="4" rx="2" fill="#1E293B" />
   <rect x="902" y="134" width="0" height="4" rx="2" fill="#34D399">
     <animate attributeName="width" from="0" to="226" dur="1.1s" begin="0.55s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1" />
   </rect>
 
-  <text x="36" y="172" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">Stack mix: TypeScript: 5 · JavaScript: 1 · Python: 1 · Auto-refreshed via GitHub Actions</text>
+  <text x="36" y="172" fill="#64748B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">Stack mix: TypeScript: 6 · JavaScript: 1 · Python: 1 · Auto-refreshed via GitHub Actions</text>
 </svg>
