@@ -84,6 +84,40 @@ Ship       publish reproducible open-source releases with CI & verified CLI outp
 
 ---
 
+## GitHub Telemetry
+
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=md1qamar&amp;show_icons=true&amp;include_all_commits=true&amp;theme=tokyonight&amp;hide_border=true&amp;rank_icon=github&amp;custom_title=GitHub%20Stats" alt="GitHub stats" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=md1qamar&amp;layout=compact&amp;langs_count=8&amp;theme=tokyonight&amp;hide_border=true&amp;card_width=455" alt="Top languages" />
+</p>
+
+<p align="center">
+  <img width="100%" src="https://streak-stats.demolab.com?user=md1qamar&amp;theme=tokyonight&amp;hide_border=true&amp;date_format=j%20M%5B%20Y%5D&amp;card_width=860" alt="GitHub streak" />
+</p>
+
+<p align="center">
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=md1qamar&amp;theme=tokyonight" alt="Profile details" />
+</p>
+
+<p align="center">
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=md1qamar&amp;theme=tokyonight" alt="Most commit language" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=md1qamar&amp;theme=tokyonight&amp;utcOffset=5.5" alt="Productive time" />
+</p>
+
+<p align="center">
+  <img width="100%" src="https://ghchart.rshah.org/7C3AED/md1qamar" alt="GitHub contribution chart" />
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/md1qamar/md1qamar/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/md1qamar/md1qamar/output/github-contribution-grid-snake.svg" />
+    <img width="100%" alt="Contribution snake" src="https://raw.githubusercontent.com/md1qamar/md1qamar/output/github-contribution-grid-snake.svg" />
+  </picture>
+</p>
+
+---
+
 ## Connect
 
 - **GitHub:** https://github.com/md1qamar
